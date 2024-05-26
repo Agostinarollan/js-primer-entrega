@@ -7,7 +7,7 @@ let usuario= prompt("ingrese usuario");
 console.log("Bienvenido a la empresa", usuario);
 
 
-let tipoFertilizante= prompt("ingrese tipo de fertilizante FA, FB, FC");
+let tipoFertilizante= prompt("Ingrese tipo de fertilizante:\n1. FA\n2. FB\n3. FC");
 let cantidadHectareas=parseInt(prompt("ingrese cantidad de hectareas a trabajar"));
 /*if (isNaN (cantidadHectareas)){
     console.log("La cantidad de hectáreas ingresada no es válida.");
