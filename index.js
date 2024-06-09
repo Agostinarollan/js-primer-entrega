@@ -3,8 +3,14 @@ const ta=100; // tasa de apliacion para FA
 const tb=120; // tasa de apliacion para FB
 const tc=90; // tasa de apliacion para FC
 
-let usuario= prompt("ingrese usuario");
+let usuario= prompt("ingrese su nombre de usuario");
 alert("Bienvenido a la empresa  "+ usuario);
+
+//objeto para almacenar info del usurio//
+let usuarioData={
+    nombre: usuario,
+    aplicaciones:[]
+};
 
 let carga;
 do {
@@ -18,10 +24,6 @@ do {
 } while (carga !== "4");
 
 
-/*let tipoFertilizante= prompt("Ingrese tipo de fertilizante:\n1. FA\n2. FB\n3. FC");
-let cantidadHectareas=parseInt(prompt("ingrese cantidad de hectareas a trabajar"));
-
-calcularCantidadFertilizante(cantidadHectareas,tipoFertilizante);*/
 // Función para calcular la cantidad total de fertilizante
 function calcularCantidadFertilizante (cantidadHectareas,tipoFertilizante){
     let cantidadTotalFertilizante;
@@ -45,3 +47,16 @@ function calcularCantidadFertilizante (cantidadHectareas,tipoFertilizante){
     }
     alert("La cantidad total de fertilizante a utilizar es: "+cantidadTotalFertilizante+" kg/hectárea");
 }
+
+function buscarAplicacionesPorTipo(tipo){
+    return usuarioData.aplicaciones.filter( aplicaccion => aplicacion.tipoFertilizante === tipo);
+}
+function mostrarTodasLasApliaciones(){
+    console.log("Aplicaciones de fertilizante para el usaurio" + usuarioData+ ":");
+    usuarioData.aplicaciones.forEach(aplicacion=>{
+        console.log("tipo de fertilizante" + aplicacion.tipoFertilizante);
+        console.log("cantidad de hectareas" + aplicacion.cantidadHectareas);
+        console.log("cantidad total de ferrtilizante"+ aplicacion.cantidadTotalFertilizante + "kg");
+    })
+}
+mostrarTodasLasApliaciones();
