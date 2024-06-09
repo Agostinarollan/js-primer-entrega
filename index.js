@@ -45,6 +45,12 @@ function calcularCantidadFertilizante (cantidadHectareas,tipoFertilizante){
             alert ("El tipo de fertilizante no es correcto");
         break
     }
+    usuarioData.aplicaciones.push({
+        tipoFertilizante: tipoFertilizante,
+        cantidadHectareas: cantidadHectareas,
+        cantidadTotalFertilizante: cantidadTotalFertilizante
+    });
+
     alert("La cantidad total de fertilizante a utilizar es: "+cantidadTotalFertilizante+" kg/hectárea");
 }
 
@@ -54,9 +60,10 @@ function buscarAplicacionesPorTipo(tipo){
 function mostrarTodasLasApliaciones(){
     console.log("Aplicaciones de fertilizante para el usaurio" + usuarioData+ ":");
     usuarioData.aplicaciones.forEach(aplicacion=>{
-        console.log("tipo de fertilizante" + aplicacion.tipoFertilizante);
-        console.log("cantidad de hectareas" + aplicacion.cantidadHectareas);
-        console.log("cantidad total de ferrtilizante"+ aplicacion.cantidadTotalFertilizante + "kg");
+        console.log("Nombre del usuario: " + usuarioData.nombre);
+        console.log("tipo de fertilizante " + aplicacion.tipoFertilizante);
+        console.log("cantidad de hectareas " + aplicacion.cantidadHectareas);
+        console.log("cantidad total de ferrtilizante "+ aplicacion.cantidadTotalFertilizante + "kg");
     })
 }
 mostrarTodasLasApliaciones();
